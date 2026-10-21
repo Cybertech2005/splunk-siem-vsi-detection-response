@@ -27,7 +27,7 @@ Baselines came from the average hourly counts in the normal logs. Thresholds sit
 
 ## Windows attack: what I found
 
-The attack looked like brute force against the Windows server, followed by password-reset attempts.
+The evidence points to a brute-force attack on the Windows server: repeated lockouts, a surge of password-reset attempts, then a rise in successful logons.
 
 | Measure | Baseline | Attack |
 |---|---|---|
@@ -80,6 +80,7 @@ The attack looked like brute force against the Windows server, followed by passw
 
 - **Sample data.** The datasets and the "VSI" company were provided for the exercise. I did the analysis, reports, dashboards and thresholds.
 - **Thresholds are simple.** I set them from averages and the highest normal hour. A real SOC would tune against longer history to cut false positives.
+- "Brute force" is a conclusion, not proof.** Total failed activity in the attack data (93) was lower than in the baseline (142), which is unusual for brute force. Confirming it would take per-attempt source IPs and usernames.
 - **Attribution is limited.** "Ukraine" comes from IP geolocation. That shows where traffic appeared to come from, not who was behind it.
 
 ## Files
