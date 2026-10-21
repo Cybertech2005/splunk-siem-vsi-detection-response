@@ -79,9 +79,11 @@ The evidence points to a brute-force attack on the Windows server: repeated lock
 ## Honest notes
 
 - **Sample data.** The datasets and the "VSI" company were provided for the exercise. I did the analysis, reports, dashboards and thresholds.
-- **Thresholds are simple.** I set them from averages and the highest normal hour. A real SOC would tune against longer history to cut false positives.
-- Brute force is a conclusion, not proof.** Total failed activity in the attack data (93) was lower than in the baseline (142), which is unusual for brute force. Confirming it would take per-attempt source IPs and usernames.
-- One alert threshold is too low.** The failed-activity alert uses a threshold of 10, but normal hours in the baseline reached 21 failures, so it would fire constantly on normal traffic. Raising it above 21 would still catch the 35-failure attack hour.
+- **Thresholds are simple.** I set them from averages. A real SOC would tune against longer history to cut false positives.
+- **Brute force is a conclusion, not proof.** Total failed activity in the attack data (93) was lower than in the baseline (142), which is unusual for brute force. Confirming it would take per-attempt source IPs and usernames.
+- **One alert threshold is too low.** The failed-activity alert uses a threshold of 10, but normal hours in the baseline reached 21 failures, so it would fire constantly on normal traffic. Raising it above 21 would still catch the 35-failure attack hour.
+
+
 - **Attribution is limited.** "Ukraine" comes from IP geolocation. That shows where traffic appeared to come from, not who was behind it.
 
 ## Files
